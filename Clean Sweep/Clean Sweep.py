@@ -154,7 +154,7 @@ def throwBall():
     ballAngle = 145
     ballAngleRad = math.radians(ballAngle)
 
-    ballSpeed = random.randint(4, 8)
+    ballSpeed = 5
 
     ballVelX = math.cos(ballAngleRad) * ballSpeed
     ballVelY = -math.sin(ballAngleRad) * ballSpeed
