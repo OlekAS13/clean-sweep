@@ -137,7 +137,7 @@ def startGame():
     pointsP1 = 0
     pointsP2 = 0
     drawBall = False
-    lostBallsP1 = 1
+    lostBallsP1 = 5
     lostBallsP2 = 1
     screenClearP1 = False
     screenClearP2 = False
@@ -154,7 +154,7 @@ def throwBall():
     ballAngle = 145
     ballAngleRad = math.radians(ballAngle)
 
-    ballSpeed = 10
+    ballSpeed = random.randint(4, 8)
 
     ballVelX = math.cos(ballAngleRad) * ballSpeed
     ballVelY = -math.sin(ballAngleRad) * ballSpeed
@@ -424,6 +424,7 @@ while running:
             if not dotsP1:
                 gameStarted = False
                 paddle = pygame.Rect(930, 1050, 60, 30)
+                throwBall()
         
         if mode == "Two-player":
             if whichPlayer == 1:
@@ -436,12 +437,14 @@ while running:
                 if not dotsP2:
                     gameStarted = False
                     paddle = pygame.Rect(930, 1050, 60, 30)
+                    throwBall()
         
         # przegrana
         if mode == "One-player":
             if lostBallsP1 == 6:
                 gameStarted = False
                 paddle = pygame.Rect(930, 1050, 60, 30)
+                throwBall()
         
         if mode == "Two-player":
             if lostBallsP1 == 6:
@@ -453,6 +456,7 @@ while running:
             if lostBallsP2 == 6:
                 gameStarted = False
                 paddle = pygame.Rect(930, 1050, 60, 30)
+                throwBall()
 
     pygame.display.flip()
 
