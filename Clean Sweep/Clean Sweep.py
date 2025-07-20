@@ -450,7 +450,7 @@ while running:
             if lostBallsP1 == 6:
                 drawBall = False
                 ball = pygame.Rect(960, 1000, 18, 18)
-                whichPlayer = 6
+                whichPlayer = 2
                 lostBallsP1 += 1
 
             if lostBallsP2 == 6:
