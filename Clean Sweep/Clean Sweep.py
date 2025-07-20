@@ -137,7 +137,7 @@ def startGame():
     pointsP1 = 0
     pointsP2 = 0
     drawBall = False
-    lostBallsP1 = 5
+    lostBallsP1 = 1
     lostBallsP2 = 1
     screenClearP1 = False
     screenClearP2 = False
