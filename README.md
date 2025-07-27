@@ -11,7 +11,7 @@ Ramtek Clean Sweep from 1974 in Python
 Clean Sweep is a game developed by Ramtek in 1974. In this game you need to "clean" all the dots on the screen to win. If you loose your ball five times you loose. The ball angle is set depending on how far the ball's center is to the paddle's center during rebound (same as in Breakout). When in two-player mode the player switches when the first one wins or looses. Ball is always served at the same angle.
 
 ## Controls
-* Mouse buttons - start the game
+* Mouse buttons - start, serve the ball
 * G - serve the ball
 * M - change the mode
 
