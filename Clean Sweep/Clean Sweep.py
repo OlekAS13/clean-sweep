@@ -227,8 +227,12 @@ while running:
         if event.type == TOGGLE_ARROW and gameStarted == True and drawBall == False:
             arrowVisible = not arrowVisible
 
-        if event.type == pygame.MOUSEBUTTONDOWN and gameStarted == False:
-            startGame()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if gameStarted == False:
+                startGame()
+            
+            elif gameStarted:
+                throwBall()
         
         if gameStarted == True:
             if pressedKeys[pygame.K_g] and drawBall == False:
