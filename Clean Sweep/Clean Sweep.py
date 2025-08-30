@@ -185,6 +185,7 @@ pygame.time.set_timer(TOGGLE_PLAYER_COUNT, 50)
 pygame.time.set_timer(TOGGLE_ARROW, 50)
 
 while running:
+    dt = clock.get_time() / 1000.0 # delta time w sekundach
     pressedKeys = pygame.key.get_pressed()
     mouse_x, mouse_y = pygame.mouse.get_pos()
 
@@ -323,8 +324,8 @@ while running:
     # ---LOGIKA---
     # ruch ball
     if drawBall:
-        ball.centerx += ballVelX
-        ball.centery += ballVelY
+        ball.centerx += ballVelX * dt * 200
+        ball.centery += ballVelY * dt * 200
 
     # odbijanie ball od scian
     if ball.colliderect(wallLeft):
