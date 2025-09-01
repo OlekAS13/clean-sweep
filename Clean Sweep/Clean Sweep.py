@@ -335,6 +335,10 @@ while running:
             wallSound.stop()
             wallSound.play()
 
+        # anti-clip
+        if ball.left < wallLeft.right:
+            ball.left = wallLeft.right
+
     if ball.colliderect(wallRight):
         ballVelX *= -1
 
@@ -342,12 +346,20 @@ while running:
             wallSound.stop()
             wallSound.play()
 
+        # anti-clip
+        if ball.right > wallRight.left:
+            ball.right = wallRight.left
+
     if ball.colliderect(wallTop):
         ballVelY *= -1
 
         if gameStarted:
             wallSound.stop()
             wallSound.play()
+
+        # anti-clip
+        if ball.top < wallTop.bottom:
+            ball.top = wallTop.bottom
 
     # poza gra
     if gameStarted == False:
@@ -359,6 +371,10 @@ while running:
 
             ballVelX = math.cos(ballAngleRad) * ballSpeed
             ballVelY = -math.sin(ballAngleRad) * ballSpeed
+
+            # anti-clip
+            if ball.bottom > bar.top:
+                ball.bottom = bar.top
         
         if clickStartVisible:
             screen.blit(clickStartText, [1720, 1000])
@@ -367,7 +383,8 @@ while running:
             screen.blit(freePlayText, [1735, 1000])
 
         screen.blit(modeText, [25, 1000])
-     # podczas gry
+
+    # podczas gry
     if gameStarted == True:
         playerCountVisible = True
         
