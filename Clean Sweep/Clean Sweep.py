@@ -391,10 +391,18 @@ while running:
         # ruch paddle
         paddle.centerx = mouse_x
 
+        # ograniczanie przy scianach
         paddle.left = max(paddle.left, 260)
-        paddle.right = min(paddle.right, 1650)
+        paddle.right = min(paddle.right, 1644)
 
         screen.blit(paddleImg, paddle)
+
+        # blokowanie myszy przy scianach
+        if paddle.left == 260:
+            pygame.mouse.set_pos(paddle.centerx, pygame.mouse.get_pos()[1])
+        
+        elif paddle.right == 1644:
+            pygame.mouse.set_pos(paddle.centerx, pygame.mouse.get_pos()[1])
 
         
         # odbijanie ball od paddle
