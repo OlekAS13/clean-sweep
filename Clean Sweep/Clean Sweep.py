@@ -391,8 +391,12 @@ while running:
         # ruch paddle
         paddle.centerx = mouse_x
 
+        paddle.left = max(paddle.left, 260)
+        paddle.right = min(paddle.right, 1650)
+
         screen.blit(paddleImg, paddle)
 
+        
         # odbijanie ball od paddle
         if ball.colliderect(paddle):
             ballAngle = dynamicBallRotationAngle()
